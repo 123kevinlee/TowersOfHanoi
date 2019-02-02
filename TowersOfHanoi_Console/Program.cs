@@ -111,13 +111,10 @@ namespace TowersOfHanoi_Console
 					Console.ResetColor();
 				}
 			}
-			if (gameOver == true)
-			{
-				//Console.Clear();
-				int x = Console.CursorTop;
-				Console.WriteLine("You have won!");
-				Console.WriteLine("You used a total of " + movesMade + " moves.");
-			}
+			int x = Console.CursorTop;
+			Console.WriteLine("You have won!");
+			Console.WriteLine("You used a total of " + movesMade + " moves.");
+
 		}
 
 		static void BeginGame(int rings, Peg peg1, Peg peg2, Peg peg3)
@@ -156,7 +153,7 @@ namespace TowersOfHanoi_Console
 
 		static bool GameOver(Peg gameOverPeg, int amountOfRings)
 		{
-			if (gameOverPeg.rings.Count() == amountOfRings)
+			if (gameOverPeg.rings.Count() == amountOfRings) 
 			{
 				return true;
 			}
