@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/******************************************************************
+*	Kevin Lee	The Towers of Hanoi Puzzle - Create a peg Class   * 
+*	Period 1	that will incorporate the functions needed to     *
+*   2/8/18		play the game.	                                  *
+* *****************************************************************/
 
 namespace TowersOfHanoi_Console
 {
@@ -14,7 +17,6 @@ namespace TowersOfHanoi_Console
 			get { return height; }
 		}
 
-		//public int[] rings { get; set; }
 		public List<int> rings = new List<int>();
 
 		public Peg(int height)
@@ -47,7 +49,8 @@ namespace TowersOfHanoi_Console
 					Console.SetCursorPosition(x - rings[i - 1], y - i);
 					switch (rings[i - 1])
 					{
-						case 1:Console.ForegroundColor = ConsoleColor.Red;
+						case 1:
+							Console.ForegroundColor = ConsoleColor.Red;
 							break;
 						case 2:
 							Console.ForegroundColor = ConsoleColor.Yellow;
@@ -64,12 +67,22 @@ namespace TowersOfHanoi_Console
 						case 6:
 							Console.ForegroundColor = ConsoleColor.DarkYellow;
 							break;
+						case 7:
+							Console.ForegroundColor = ConsoleColor.Cyan;
+							break;
+						case 8:
+							Console.ForegroundColor = ConsoleColor.DarkGray;
+							break;
+						case 9:
+							Console.ForegroundColor = ConsoleColor.DarkGreen;
+							break;
+						case 10:
+							Console.ForegroundColor = ConsoleColor.White;
+							break;
 						default:
 							break;
 					}
 					Console.WriteLine(new string('x', rings[i - 1]) + "|" + new string('x', rings[i - 1]));
-					//Console.SetCursorPosition(x - rings[i - 1], y + i - rings.Count - 1);
-					//Console.WriteLine(new string('x', rings[i - 1]) + "|" + new string('x', rings[i - 1]));
 					Console.ResetColor();
 				}
 				else
